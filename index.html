@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keraton Surowosan – Warisan Kejayaan Banten</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#galeri">Galeri</a>
+  <a href="#informasi">Informasi</a>
+  <a href="#sejarah">Sejarah</a>
+  <a href="#funfact">Fun Facts</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#kunjungi">Kunjungi</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-badge">Warisan Budaya Banten</p>
+  <h1>Keraton <span>Surowosan</span></h1>
+  <p>Sisa-sisa megah pusat Kesultanan Banten yang pernah menguasai jalur perdagangan Selat Sunda selama lebih dari dua abad.</p>
+  <div class="hero-divider"></div>
+</header>
+
+<main>
+
+  <!-- GALERI -->
+  <section id="galeri">
+    <div class="container">
+      <div class="section-title">
+        <h2>Galeri</h2>
+        <p>Penampakan reruntuhan Keraton Surosowan yang masih berdiri hingga kini</p>
+      </div>
+      <div class="gallery-grid">
+
+        <div class="gallery-item" data-src="images/Keraton_Surosowan_(1).jpg" data-caption="Keraton Surosowan">
+          <img
+            src="images/Keraton_Surosowan_(1).jpg"
+            alt="Keraton Surosowan"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>🔍 Lihat</span></div>
+          <div class="gallery-caption">Keraton Surosowan</div>
+        </div>
+
+        <div class="gallery-item" data-src="images/images surosowan 2.jfif" data-caption="Surosowan 2">
+          <img
+            src="images/images surosowan 2.jfif"
+            alt="Surosowan 2"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>🔍 Lihat</span></div>
+          <div class="gallery-caption">Keraton Surosowan 2</div>
+        </div>
+
+        <div class="gallery-item" data-src="images/images surosowan 3.jfif" data-caption="Surosowan 3">
+          <img
+            src="images/images surosowan 3.jfif"
+            alt="Surosowan 3"
+            loading="lazy"
+          />
+          <div class="gallery-overlay"><span>🔍 Lihat</span></div>
+          <div class="gallery-caption">Keraton Surosowan 3</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Tampilan foto penuh">
+    <button id="lightbox-close" aria-label="Tutup">&times;</button>
+    <button id="lightbox-prev" aria-label="Foto sebelumnya">&#8249;</button>
+    <button id="lightbox-next" aria-label="Foto berikutnya">&#8250;</button>
+    <div id="lightbox-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- INFORMASI UMUM -->
+  <section id="informasi">
+    <div class="container">
+      <div class="section-title">
+        <h2>Informasi Umum</h2>
+        <p>Fakta-fakta dasar mengenai situs bersejarah ini</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <div class="label">Lokasi</div>
+          <div class="value">Banten Lama, Serang, Banten</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📅</div>
+          <div class="label">Dibangun</div>
+          <div class="value">± 1552 – 1570 M</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📐</div>
+          <div class="label">Luas Awal</div>
+          <div class="value">&gt; 30.000 m²</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">🏛️</div>
+          <div class="label">Status</div>
+          <div class="value">Cagar Budaya Nasional</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">�</div>
+          <div class="label">Pendiri</div>
+          <div class="value">Maulana Hasanuddin</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">🌏</div>
+          <div class="label">Koordinat</div>
+          <div class="value">6°02'S, 106°09'E</div>
+        </div>
+      </div>
+
+      <div class="desc-box">
+        <p>
+          Keraton Surosowan adalah istana sekaligus benteng pertahanan yang menjadi pusat
+          Kesultanan Banten sejak abad ke-16 hingga awal abad ke-19. Nama <em>Surosowan</em>
+          berasal dari bahasa Jawa-Kuno yang bermakna "tempat sang pemimpin berdiri teguh."
+        </p>
+        <p>
+          Kompleks ini berfungsi ganda: sebagai kediaman sultan beserta keluarga dan aparatur
+          kerajaan, sekaligus sebagai pusat kegiatan politik, ekonomi, sosial, dan budaya
+          Kerajaan Banten. Dindingnya yang tebal—tersusun dari bata besar dan karang laut—
+          dirancang untuk menahan serangan dari berbagai arah.
+        </p>
+        <p>
+          Kini hanya dinding-dinding kokoh dan fondasi bangunan yang tersisa, namun situs ini
+          tetap menjadi salah satu destinasi wisata sejarah paling penting di Indonesia,
+          khususnya di kawasan Banten Lama.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEJARAH -->
+  <section id="sejarah">
+    <div class="container">
+      <div class="section-title">
+        <h2>Perjalanan Sejarah</h2>
+        <p>Dari kejayaan kesultanan hingga reruntuhan yang tersisa</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <time class="year">1552 – 1570 M</time>
+          <h3>Pembangunan Awal</h3>
+          <p>
+            Maulana Hasanuddin, putra Sunan Gunung Jati dan sultan pertama Banten, membangun
+            kompleks keraton ini sebagai pusat pemerintahan Kesultanan Banten yang baru berdiri.
+            Dinding awal dibangun tanpa bastion menggunakan bata besar bercampur tanah liat.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <time class="year">1570 – 1580 M</time>
+          <h3>Diperkuat Sultan Maulana Yusuf</h3>
+          <p>
+            Sultan Maulana Yusuf memperkuat tembok keraton seluas ± 3,8 hektar dengan dinding
+            bata dan karang laut. Parit (moat) juga dibangun mengelilingi kompleks sebagai
+            pertahanan tambahan. Di era ini Surosowan mulai menyerupai benteng sejati.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <time class="year">Abad ke-17</time>
+          <h3>Puncak Kejayaan Banten</h3>
+          <p>
+            Di bawah Sultan Ageng Tirtayasa (1651–1683), Banten mencapai puncak kejayaannya
+            sebagai bandar dagang internasional. Keraton Surosowan diperluas dan diperindah,
+            menjadi simbol kekuasaan yang disegani bangsa-bangsa Eropa dan Asia.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <time class="year">1680 – 1683 M</time>
+          <h3>Konflik Internal &amp; Campur Tangan VOC</h3>
+          <p>
+            Perang saudara antara Sultan Ageng Tirtayasa dan putranya, Sultan Haji, membuka
+            celah bagi VOC Belanda untuk ikut campur. Dengan bantuan VOC, Sultan Haji berhasil
+            merebut tahta, tetapi kedaulatan Banten perlahan tergerus.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <time class="year">1808 M</time>
+          <h3>Dihancurkan Pasukan Belanda</h3>
+          <p>
+            Atas perintah Gubernur Jenderal Herman Willem Daendels, pasukan Belanda menyerang
+            dan menghancurkan Keraton Surosowan. Bangunan utama diratakan dan Kesultanan
+            Banten secara resmi dibubarkan. Reruntuhan yang kita lihat hari ini adalah sisa
+            dari penghancuran tersebut.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <time class="year">Abad ke-20 – Kini</time>
+          <h3>Pelestarian sebagai Cagar Budaya</h3>
+          <p>
+            Pemerintah Indonesia menetapkan situs ini sebagai Cagar Budaya Nasional. Berbagai
+            upaya arkeologi dan pemugaran terus dilakukan. Kini situs terbuka untuk umum
+            sebagai destinasi wisata sejarah di kawasan Banten Lama, Serang.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FUN FACTS -->
+  <section id="funfact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Fun Facts</h2>
+        <p>Hal-hal menarik yang mungkin belum kamu tahu tentang Surosowan</p>
+      </div>
+
+      <div class="fact-grid">
+
+        <div class="fact-card" data-num="1">
+          <div class="fact-icon">🧱</div>
+          <h3>Bata Tanpa Semen Modern</h3>
+          <p>
+            Dinding-dinding Surosowan yang bertahan ratusan tahun dibangun tanpa semen modern.
+            Para pembangunnya menggunakan campuran bata, karang laut, dan tanah liat—teknik
+            tradisional yang ternyata sangat tahan lama.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="2">
+          <div class="fact-icon">🛁</div>
+          <h3>Kolam Mandi Sultan</h3>
+          <p>
+            Di dalam kompleks terdapat kolam pemandian (Tamansari) khusus sultan dan
+            keluarganya. Strukturnya masih bisa dilihat hingga kini dan menjadi salah satu
+            bagian yang paling sering difoto pengunjung.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="3">
+          <div class="fact-icon">🌊</div>
+          <h3>Dikelilingi Parit</h3>
+          <p>
+            Seperti kastil-kastil Eropa, Surosowan dahulu dikelilingi parit berair (moat)
+            sebagai pertahanan alami. Bekas parit tersebut masih dapat diidentifikasi oleh
+            para arkeolog hingga saat ini.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="4">
+          <div class="fact-icon">🗺️</div>
+          <h3>Muncul di Peta Eropa Kuno</h3>
+          <p>
+            Pelabuhan dan keraton Banten tergambar dalam peta-peta pelayaran Eropa dari abad
+            ke-16 dan 17, membuktikan bahwa Banten adalah salah satu kota paling dikenal di
+            Asia Tenggara pada masa itu.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="5">
+          <div class="fact-icon">🇬🇧</div>
+          <h3>Sempat Dikunjungi Inggris</h3>
+          <p>
+            Pedagang Inggris dari East India Company pernah mendirikan kantor dagang di
+            Banten pada awal abad ke-17, menjadikan Surosowan saksi bisu persaingan dagang
+            antara Inggris dan Belanda di Nusantara.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="6">
+          <div class="fact-icon">⚔️</div>
+          <h3>Jatuh dari Dalam</h3>
+          <p>
+            Perang antara Sultan Ageng Tirtayasa dan anaknya sendiri adalah titik balik
+            terbesar Banten. Konflik ini dimanfaatkan VOC untuk menguasai kerajaan dari
+            dalam—tanpa perlu menaklukkan benteng secara langsung.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="7">
+          <div class="fact-icon">📏</div>
+          <h3>Lebih Besar dari yang Terlihat</h3>
+          <p>
+            Luas awal kompleks diperkirakan lebih dari 30.000 m²—setara dengan sekitar empat
+            lapangan sepak bola. Yang tersisa hari ini hanya sebagian kecil dari kemegahan
+            aslinya.
+          </p>
+        </div>
+
+        <div class="fact-card" data-num="8">
+          <div class="fact-icon">🏗️</div>
+          <h3>Empat Fase Pembangunan</h3>
+          <p>
+            Para arkeolog mengidentifikasi bahwa Surosowan dibangun dalam setidaknya empat
+            fase berbeda selama beberapa generasi sultan, dengan setiap fase membawa perluasan
+            dan penguatan struktur.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <div class="container">
+      <div class="section-title">
+        <h2>Quiz Sejarah</h2>
+        <p>Seberapa dalam kamu mengenal Benteng Surosowan?</p>
+      </div>
+
+      <div class="quiz-box">
+        <div id="quiz-progress">
+          <div id="quiz-progress-bar"></div>
+        </div>
+        <p id="quiz-counter">Soal 1 dari 5</p>
+
+        <div id="quiz-question-wrap">
+          <p id="quiz-question"></p>
+          <div id="quiz-options"></div>
+          <p id="quiz-feedback"></p>
+        </div>
+
+        <div id="quiz-result" class="hidden">
+          <div id="quiz-score-circle">
+            <span id="quiz-score-num"></span>
+            <small>/5</small>
+          </div>
+          <p id="quiz-result-msg"></p>
+          <button id="quiz-restart">🔄 Coba Lagi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNJUNGI -->
+  <section id="kunjungi">
+    <div class="container">
+      <div class="section-title">
+        <h2>Informasi Kunjungan</h2>
+        <p>Rencanakan kunjunganmu ke situs bersejarah ini</p>
+      </div>
+
+      <div class="visit-box">
+        <div class="visit-item">
+          <h3>📍 Alamat</h3>
+          <p>
+            Kampung Banten, Kec. Kasemen,<br />
+            Kota Serang, Banten 42191<br />
+            Indonesia
+          </p>
+        </div>
+        <div class="visit-item">
+          <h3>🕗 Jam Buka</h3>
+          <p>
+            Setiap hari<br />
+            08.00 – 17.00 WIB<br />
+            (termasuk hari libur nasional)
+          </p>
+        </div>
+        <div class="visit-item">
+          <h3>🎟️ Tiket Masuk</h3>
+          <p>
+            Terjangkau / gratis<br />
+            (tarif resmi dapat berubah,<br />
+            cek saat berkunjung)
+          </p>
+        </div>
+        <div class="visit-item">
+          <h3>💡 Tips Berkunjung</h3>
+          <ul>
+            <li>Kenakan alas kaki yang nyaman</li>
+            <li>Bawa air minum yang cukup</li>
+            <li>Datang pagi untuk menghindari panas</li>
+            <li>Gabungkan dengan kunjungan ke Masjid Agung Banten yang berdekatan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PETA -->
+      <div class="map-wrap">
+        <h3 class="map-title">📌 Lokasi di Peta</h3>
+        <div class="map-container">
+          <iframe
+            title="Lokasi Keraton Surosowan di Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5!2d106.1524!3d-6.0356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418a3b7e2e6e4d%3A0x8c6e8d2e6e8d2e6e!2sKeraton%20Surosowan!5e0!3m2!1sid!2sid!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a
+          href="https://maps.google.com/?q=Keraton+Surosowan,+Banten"
+          target="_blank"
+          rel="noopener"
+          class="map-link"
+          aria-label="Buka di Google Maps (tab baru)">
+          Buka di Google Maps ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color: var(--gold-light);">Benteng Surosowan</strong>
+    &nbsp;–&nbsp; Warisan Kejayaan Kesultanan Banten
+  </p>
+  <p style="margin-top:.5rem;">
+    Sumber informasi:
+    <a href="https://www.atlasobscura.com/places/surosowan-palace" target="_blank" rel="noopener" aria-label="Atlas Obscura – Surosowan Palace (buka di tab baru)">Atlas Obscura</a>,
+    <a href="https://en.wikipedia.org/wiki/Old_Banten" target="_blank" rel="noopener" aria-label="Wikipedia – Old Banten (buka di tab baru)">Wikipedia – Old Banten</a>
+  </p>
+  <p style="margin-top:.4rem; color:#9a7a5a;">Dibuat untuk keperluan edukasi dan pelestarian budaya.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
