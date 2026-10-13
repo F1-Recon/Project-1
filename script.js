@@ -23,7 +23,7 @@ sections.forEach((s) => navObserver.observe(s));
 // FADE-IN ON SCROLL
 // ============================================================
 const fadeEls = document.querySelectorAll(
-  '.info-card, .fact-card, .timeline-item, .gallery-item, .visit-item'
+  '.info-card, .fact-card, .timeline-item, .gallery-item, .visit-item, .nearby-card'
 );
 
 const fadeObserver = new IntersectionObserver(
@@ -248,3 +248,200 @@ qRestart.addEventListener('click', restartQuiz);
 
 // inisialisasi quiz
 loadQuestion();
+
+// ============================================================
+// SCROLL PROGRESS BAR
+// ============================================================
+const scrollBar = document.getElementById('scroll-progress');
+
+window.addEventListener('scroll', () => {
+  const scrollTop    = window.scrollY;
+  const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+  const pct          = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollBar.style.width = pct + '%';
+}, { passive: true });
+
+// ============================================================
+// PARALLAX HERO
+// ============================================================
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY < window.innerHeight) {
+    // Gerakkan background lebih lambat dari scroll (faktor 0.4)
+    hero.style.backgroundPositionY = `calc(center + ${window.scrollY * 0.4}px)`;
+  }
+}, { passive: true });
+
+// ============================================================
+// TYPEWRITER EFFECT
+// ============================================================
+const typewriterEl = document.querySelector('[data-typewriter]');
+
+if (typewriterEl) {
+  const fullText  = typewriterEl.dataset.typewriter;
+  const speed     = 38; // ms per karakter
+  let   index     = 0;
+
+  // Tunda sedikit supaya hero sudah terlihat sepenuhnya
+  setTimeout(function type() {
+    if (index <= fullText.length) {
+      typewriterEl.textContent = fullText.slice(0, index);
+      index++;
+      setTimeout(type, speed);
+    } else {
+      typewriterEl.classList.add('typing-done');
+    }
+  }, 600);
+}
+
+// ============================================================
+// COUNTER ANIMATION
+// ============================================================
+function animateCounter(el) {
+  const target   = parseInt(el.dataset.counter, 10);
+  const suffix   = el.dataset.suffix || '';
+  const duration = 1400; // ms
+  const start    = performance.now();
+
+  function step(now) {
+    const elapsed  = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic
+    const eased    = 1 - Math.pow(1 - progress, 3);
+    const current  = Math.round(eased * target);
+    // Format ribuan dengan titik
+    el.textContent = current.toLocaleString('id-ID') + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-counter]').forEach(el => {
+  counterObserver.observe(el);
+});
+
+// ============================================================
+// SECTION DIVIDER REVEAL
+// ============================================================
+const dividerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      dividerObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.section-divider').forEach(el => {
+  dividerObserver.observe(el);
+});
+
+// ============================================================
+// SPARKLE PARTICLES (HERO)
+// ============================================================
+const canvas  = document.getElementById('sparkle-canvas');
+
+if (canvas) {
+  const ctx     = canvas.getContext('2d');
+  let   sparks  = [];
+  let   rafId;
+
+  function resizeCanvas() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function randomBetween(a, b) {
+    return a + Math.random() * (b - a);
+  }
+
+  function createSpark() {
+    return {
+      x:       randomBetween(0, canvas.width),
+      y:       randomBetween(0, canvas.height),
+      r:       randomBetween(0.5, 2.2),
+      alpha:   0,
+      maxAlpha:randomBetween(0.3, 0.8),
+      speed:   randomBetween(0.003, 0.008),
+      phase:   randomBetween(0, Math.PI * 2),
+      drift:   randomBetween(-0.12, 0.12),   // horizontal drift
+      rise:    randomBetween(-0.18, -0.06),  // upward movement
+    };
+  }
+
+  // Inisialisasi partikel
+  function initSparks(count) {
+    sparks = [];
+    for (let i = 0; i < count; i++) {
+      const s = createSpark();
+      s.alpha = randomBetween(0, s.maxAlpha); // mulai dari alpha acak
+      sparks.push(s);
+    }
+  }
+
+  function drawSparks() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    sparks.forEach(s => {
+      // Pulsasi alpha
+      s.phase += s.speed;
+      s.alpha  = s.maxAlpha * (0.5 + 0.5 * Math.sin(s.phase));
+
+      // Gerak perlahan ke atas dengan drift
+      s.x += s.drift;
+      s.y += s.rise;
+
+      // Reset jika keluar layar
+      if (s.y < -4 || s.x < -4 || s.x > canvas.width + 4) {
+        s.x     = randomBetween(0, canvas.width);
+        s.y     = canvas.height + 4;
+        s.phase = 0;
+      }
+
+      // Gambar titik emas
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(232, 184, 75, ${s.alpha})`;
+      ctx.fill();
+
+      // Glow kecil
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r * 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201, 144, 31, ${s.alpha * 0.25})`;
+      ctx.fill();
+    });
+
+    rafId = requestAnimationFrame(drawSparks);
+  }
+
+  // Kurangi partikel saat tab tidak aktif (hemat baterai)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      cancelAnimationFrame(rafId);
+    } else {
+      drawSparks();
+    }
+  });
+
+  // Resize handler
+  const ro = new ResizeObserver(() => {
+    resizeCanvas();
+    initSparks(55);
+  });
+  ro.observe(canvas);
+
+  resizeCanvas();
+  initSparks(55);
+  drawSparks();
+}
